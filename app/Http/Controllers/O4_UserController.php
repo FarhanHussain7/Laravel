@@ -1,9 +1,11 @@
 <?php
 namespace App\Http\Controllers;
+//
 use Illuminate\Http\Request;
-//  Terminal command to create Controller
 
-class UserController extends Controller
+//  Terminal command to create Controller
+//php artisan make:controller YourControllerName
+class O4_UserController extends Controller
 {
     function GetUser(){
         return "Farhan Hussain";
@@ -19,12 +21,12 @@ class UserController extends Controller
 
     // pagr is  Created in view folder and inherit here
     function ViewPage(){
-        return view('controller');
+        return view('O4_controller');
     }
 
     // pass a value in url and inherit by controller and display at view page
     function ControllerName($name){
-        return view('controllername',['name'=>$name]);
+        return view('O4_controllername',['name'=>$name]);
     }
 // nested file in view
     function ControllerAdmin(){
