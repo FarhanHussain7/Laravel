@@ -27,12 +27,15 @@ class O7_ViewController extends Controller
     // O9 --- For Blade File
     function BladePara(){
         $name="Farhan Hussain";
-        return view('O9_Blade',['user'=>$name]);
+        return view('O2_condition',['user'=>$name]);
     }
 
     function BladeArray(){
          $users=['Anil', 'Arjun', 'ankur'];
-        return view('O9_Blade.O1_BladeArray',['users'=>$users]);
+        return view('O9_Blade.O1_loop',['users'=>$users]);
     }
 
+    function SubView(){
+        return view('10_SubView.about');
+    }
 }

@@ -16,4 +16,13 @@
 
      <!-- Print the array value  -->
       <H1>{{$users[1]}}</H1>
+      @if($name=='anil')
+      <H1>This is anil</H1>
+      @elseif($name=='arjun')
+      <H1>This is arjun</H1>
+      @elseif($name=='ankur')
+      <H1>This is ankur</H1>
+      @else
+      <H1>other user </H1>
+    @endif
 </div>
