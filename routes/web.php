@@ -6,7 +6,7 @@ use App\Http\Controllers\O7_ViewController;
 
 // 01 -  For default page
 Route::get('/', function () {
-    return view('welcome');
+    return view('O1_welcome');
 });
 
 
@@ -17,7 +17,7 @@ Route::get('/home', function () {
 
 // 03 - Passing the value in url
 Route::get('/about/{name}', function ($name) {
-    return view('about',['name'=>$name]);
+    return view('O3_about',['name'=>$name]);
 });
 
 // 04 - Controller all type of routes
@@ -42,8 +42,11 @@ Route::get('/bladearray',[O7_ViewController::class,'BladeArray']);
 
 // 07 - SubView
 Route::get('/subview', function (){
-    return view('10_SubView.home');
+    return view('O7_SubView.home');
 });
-
 Route::get('/subabout',[O7_ViewController::class,'SubView']);
 
+// O8 - Component
+Route::get('/comp', function (){
+    return view('O8_compfile');
+});

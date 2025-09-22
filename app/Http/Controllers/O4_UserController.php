@@ -30,7 +30,7 @@ class O4_UserController extends Controller
     }
 // nested file in view
     function ControllerAdmin(){
-        return view('admin.login');
+        return view('O4_admin.login');
     }
 
 }

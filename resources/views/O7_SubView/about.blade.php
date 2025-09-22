@@ -1,5 +1,5 @@
 <!-- It will be access through controller  -->
-@include('10_SubView.header')
+@include('O7_SubView.header')
 <H1>About Page</H1>
 <p> Name   :  Farhan Hussain</p>
 <p> Age    :  2000</p>
@@ -9,4 +9,4 @@
 <p> Work   :  Software Engineer</p>
 
 
-@include('10_SubView.inner',['page'=>'It will Contain all Information about User '])
+@include('O7_SubView.inner',['page'=>'It will Contain all Information about User '])

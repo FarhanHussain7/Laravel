@@ -8,11 +8,11 @@ use Illuminate\Support\Facades\View;
 class O7_ViewController extends Controller
 {
     function ViewMe(){
-        return view('O8_AboutMe');
+        return view('O5_AboutMe');
     }
 
     function NestedFile(){
-        return view('View.Home.home');
+        return view('O5_View.Home.home');
     }
 // it will Check that this page is exists or not
     function Check(){
@@ -24,7 +24,7 @@ class O7_ViewController extends Controller
     }
 
 
-    // O9 --- For Blade File
+    // O7 --- For Blade File
     function BladePara(){
         $name="Farhan Hussain";
         return view('O2_condition',['user'=>$name]);
@@ -32,10 +32,10 @@ class O7_ViewController extends Controller
 
     function BladeArray(){
          $users=['Anil', 'Arjun', 'ankur'];
-        return view('O9_Blade.O1_loop',['users'=>$users]);
+        return view('O6_Blade.O1_loop',['users'=>$users]);
     }
 
     function SubView(){
-        return view('10_SubView.about');
+        return view('O7_SubView.about');
     }
 }
