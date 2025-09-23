@@ -6,18 +6,14 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class mesageBanner extends Component
+class task extends Component
 {
-    public $msg;
-    public $class;
     /**
      * Create a new component instance.
      */
-    public function __construct($msg ='',$class='')
+    public function __construct()
     {
         //
-        $this->msg=$msg;
-        $this->class=$class;
     }
 
     /**
@@ -25,6 +21,6 @@ class mesageBanner extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.mesage-banner');
+        return view('components.task');
     }
 }

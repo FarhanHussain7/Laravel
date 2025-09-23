@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\O4_UserController;
 use App\Http\Controllers\O7_ViewController;
+use App\Http\Controllers\O9_FormController;
 
 // 01 -  For default page
 Route::get('/', function () {
@@ -48,5 +49,13 @@ Route::get('/subabout',[O7_ViewController::class,'SubView']);
 
 // O8 - Component
 Route::get('/comp', function (){
-    return view('O8_compfile');
+    return view('O8_component');
 });
+
+
+// O9 - Form
+Route::get('/form', function(){
+    return view('O9_Form.O1_form_data');
+});
+
+Route::post('/adduser',[O9_FormController::class,'addUser']);
