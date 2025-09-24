@@ -54,8 +54,14 @@ Route::get('/comp', function (){
 
 
 // O9 - Form
+// simple text form data
 Route::get('/form', function(){
     return view('O9_Form.O1_form_data');
 });
-
 Route::post('/adduser',[O9_FormController::class,'addUser']);
+
+// For CheckBox and Radio Button
+Route::get('/check', function(){
+    return view('O9_Form.O2_CheckBox_and_RadioBtn');
+});
+Route::post('/radio',[O9_FormController::class,'checkRadio']);
