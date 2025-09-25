@@ -1,9 +1,31 @@
 <h1>Hello Laravel</h1>
 <p>First File which is show on browser , It will created already during creation of project </p>
 <p>It link is saved in routes folder in web.php file </p>
-<a href="/home">O2_ Home Page </a>
+<a href="/home">O2_ Home Page  </a>
+<br/>
 <a href="/about">O3_about</a>
+<br/>
 <a href="/controller">O4_Controller</a>
+<br/>
 <a href="/getname">O4_Controller_Para</a>
+<br/>
 <a href="/view">O5_View </a>
+<br/>
 <a href="/subview">O7_SubView</a>
+<br/>
+<a href="/subabout">O7_SubAbout</a>
+<br/>
+<a href="/comp">O8_Component</a>
+<br/>
+<a href="/form">O9_Form_Data</a>
+<br/>
+<a href="/check">O9_CheckBox and Radio Button</a>
+<br/>
+<a href="/valid">O9_Form_Validation</a>
+<br/>
+<a href="/subview">O7_SubView</a>
+<br/>
+<a href="/subview">O7_SubView</a>
+<br/>
+<a href="/subview">O7_SubView</a>
+<br/>
