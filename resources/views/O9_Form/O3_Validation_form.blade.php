@@ -18,16 +18,19 @@
         <!-- if you didn't use the @csrf then it will give 4197 error   -->
         @csrf
         <div class="input-wrapper">
-            <input type="text" placeholder="enter your name " name="username">
+            <input type="text" placeholder="enter your name " name="username" value="{{old('username')}}"
+            class="{{$errors->first('username')?'input-error':''}}" >
             <span style='color:red'>@error('username'){{$message}}@enderror</span>
         </div>
         <div class="input-wrapper">
-            <input type="text" placeholder="enter your email " name="email">
+            <input type="text" placeholder="enter your email " name="email" value="{{old('email')}}"
+            class="{{$errors->first('email')?'input-error':''}}" >
             <span style='color:red'>@error('email'){{$message}}@enderror</span>
 
         </div>
         <div class="input-wrapper">
-            <input type="text" placeholder="enter your Password " name="password">
+            <input type="text" placeholder="enter your Password " name="password" value="{{old('password')}}"
+            class="{{$errors->first('password')?'input-error':''}}" >
             <span style='color:red'>@error('password'){{$message}}@enderror</span>
 
         </div>
@@ -79,5 +82,9 @@
 
     .skills{
         width:400px;
+    }
+    .input-error{
+        color:red;
+        border:2px solid red;
     }
 </style>

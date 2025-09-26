@@ -70,5 +70,11 @@ Route::post('/radio',[O9_FormController::class,'checkRadio']);
 Route::get('/valid', function(){
     return view('O9_Form.O3_Validation_form');
 });
-
+// controller for validation
 Route::post('/validinfo',[O9_FormController::class,'Validation']);
+
+// 10 - Routes
+
+Route::get('/url', function(){
+    return view('O10_Routes.O1_URL_Generation');
+});

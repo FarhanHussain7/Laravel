@@ -36,11 +36,22 @@ class O9_FormController extends Controller
     // O3 - Form Validation
     function Validation(Request $request){
 
+        // built in function "validate" for checking the input data is correct or not
         $request->validate([
+        // 'name'=>'constraint | minimum limit: 0 | maximum limit: 0 '
             'username'=>'required | min:3 | max:15',
             'email'=>'required | email',
             'password'=>'required | min:4 | max:20',
             'skill'=>'required',
+        ],
+// If you want see that where this validation message are saved
+//  type this command php artisan lang:publish   -> validation.php
+        // Here we can give user define message/customize error message on input field
+        [
+            'username.required'=>'username can not be empty',
+            'username.min'=>'please enter more than 3 words',
+            'username.max'=>'please enter less than 15 words',
+            'email.required'=>'please enter the email ',
         ]);
 
         return $request;
