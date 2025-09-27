@@ -26,7 +26,7 @@
 <br/>
 <a href="{{URL::to('url')}}">1O_Routes</a>
 <br/>
-<a href="/subview">O7_SubView</a>
+<a href="{{route('nr')}}">1O_Named_routes</a>
 <br/>
 <a href="/subview">O7_SubView</a>
 <br/>

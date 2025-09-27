@@ -4,8 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\O4_UserController;
 use App\Http\Controllers\O7_ViewController;
 use App\Http\Controllers\O9_FormController;
+use App\Http\Controllers\O10_Route;
+
 
 // 01 -  For default page
+// Route::view('/','O1_welcome');
+
 Route::get('/', function () {
     return view('O1_welcome');
 });
@@ -74,7 +78,16 @@ Route::get('/valid', function(){
 Route::post('/validinfo',[O9_FormController::class,'Validation']);
 
 // 10 - Routes
-
+//  o1 -
 Route::get('/url', function(){
     return view('O10_Routes.O1_URL_Generation');
+});
+
+// o2 - Named routes
+Route::view('/named','O10_Routes.O2_Named_Routes')->name('nr');
+// o3 - Group routes
+Route::prefix('group')->group(function(){
+Route::view('/home','O10_Routes.O3_Routes_group_prefix');
+Route::get('/show',[O10_Route::class,'Show']);
+Route::get('/user',[O10_Route::class,'User']);
 });
