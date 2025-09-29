@@ -15,4 +15,8 @@ class O10_Route extends Controller
     function User(){
         return "User Routes";
     }
+
+    function Delete(){
+        return "Delete function ";
+    }
 }

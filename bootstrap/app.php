@@ -3,6 +3,10 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use App\Http\Middleware\elevenPart;
+use App\Http\Middleware\AgeCheck;
+use App\Http\Middleware\CountryCheck;
+
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -11,7 +15,14 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        //Global middleware
+        // $middleware->append(elevenPart::class);
+
+        // Route middleware
+        $middleware->appendToGroup('middle',[
+            AgeCheck::class,
+            CountryCheck::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

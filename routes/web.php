@@ -82,7 +82,6 @@ Route::post('/validinfo',[O9_FormController::class,'Validation']);
 Route::get('/url', function(){
     return view('O10_Routes.O1_URL_Generation');
 });
-
 // o2 - Named routes
 Route::view('/named','O10_Routes.O2_Named_Routes')->name('nr');
 // o3 - Group routes
@@ -90,4 +89,21 @@ Route::prefix('group')->group(function(){
 Route::view('/home','O10_Routes.O3_Routes_group_prefix');
 Route::get('/show',[O10_Route::class,'Show']);
 Route::get('/user',[O10_Route::class,'User']);
+});
+
+// Route Group with controller
+Route::controller(O10_Route::class)->group(function(){
+    Route::get('show','Show');
+    Route::get('user','user');
+    Route::get('delete','Delete');
+});
+
+// 11 - Middleware
+// Single route with group middleware
+Route::view('/middleware','O11_Middleware.O1_middleware')->middleware('middle');
+// Multiple route with group middleware
+Route::middleware('middle')->group(function(){
+Route::view('/ware','O11_Middleware.O1_middleware');
+Route::view('/home','O11_Middleware.O2_Group_middleware_Home');
+Route::view('/about','O11_Middleware.O3_Group_middleware_About');
 });
