@@ -99,6 +99,8 @@ Route::controller(O10_Route::class)->group(function(){
 });
 
 // 11 - Middleware
+
+//  Indirect way : app.php file is in the middle
 // Single route with group middleware
 Route::view('/middleware','O11_Middleware.O1_middleware')->middleware('middle');
 // Multiple route with group middleware
@@ -107,3 +109,16 @@ Route::view('/ware','O11_Middleware.O1_middleware');
 Route::view('/home','O11_Middleware.O2_Group_middleware_Home');
 Route::view('/about','O11_Middleware.O3_Group_middleware_About');
 });
+
+// Direct way : no file in between middleware and view
+use App\Http\Middleware\O4_Assiging_Route;
+Route::view('/directmid','O11_Middleware.O4_Route_Middleware')->middleware(O4_Assiging_Route::class);
+
+use App\Http\Middleware\CountryCheck;
+Route::view('/directmultimid','O11_Middleware.O4_Route_Middleware')->middleware([CountryCheck::class,O4_Assiging_Route::class]);
+
+
+// 12 - Database Connection
+use App\Http\Controllers\O11_DB_Connection;
+
+Route::get('/db',[O11_DB_Connection::class,'users']);
