@@ -10,6 +10,7 @@ class O11_DB_Connection extends Controller
     //
 
     function users(){
-        return DB::select('select * from users');
+        $users=  DB::select('select * from users');
+        return view('O12_MySql.O1_Connection',['users'=>$users]);
     }
 }
