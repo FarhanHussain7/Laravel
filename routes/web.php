@@ -6,7 +6,6 @@ use App\Http\Controllers\O7_ViewController;
 use App\Http\Controllers\O9_FormController;
 use App\Http\Controllers\O10_Route;
 
-
 // 01 -  For default page
 // Route::view('/','O1_welcome');
 
@@ -122,3 +121,8 @@ Route::view('/directmultimid','O11_Middleware.O4_Route_Middleware')->middleware(
 use App\Http\Controllers\O11_DB_Connection;
 
 Route::get('/db',[O11_DB_Connection::class,'users']);
+
+
+Route::get('/model',[O11_DB_Connection::class,'student']);
+
+// 13 -

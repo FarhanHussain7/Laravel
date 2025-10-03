@@ -15,7 +15,6 @@ class AgeCheck
      */
     public function handle(Request $request, Closure $next): Response
     {
-
         echo " Enter the Age  please : <br/>";
         if($request->age<=18){
             echo "You are not allowed :  <br/>  ";
