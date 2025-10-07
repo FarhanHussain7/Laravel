@@ -28,5 +28,27 @@
 <br/>
 <a href="{{route('nr')}}">1O_Named_routes</a>
 <br/>
+<a href="/middleware">11_Middleware</a>
+<br/>
+<a href="/db">12_Database</a>
+<br/>
+<a href="/model">13_Model</a>
+<br/>
+<a href="/subview">O7_SubView</a>
+<br/>
+<a href="/subview">O7_SubView</a>
+<br/>
+<a href="/subview">O7_SubView</a>
+<br/>
+<a href="/subview">O7_SubView</a>
+<br/>
+<a href="/subview">O7_SubView</a>
+<br/>
+<a href="/subview">O7_SubView</a>
+<br/>
+<a href="/subview">O7_SubView</a>
+<br/>
+<a href="/subview">O7_SubView</a>
+<br/>
 <a href="/subview">O7_SubView</a>
 <br/>

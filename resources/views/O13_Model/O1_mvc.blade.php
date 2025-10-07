@@ -13,6 +13,7 @@
 
     Note :- Command - php artisan model:show < model table name>
     To see the all details of table like coloums name, constraint, data type and limit
+    - It will work only when you give right name and right data configuration
 -->
 
 <div>
