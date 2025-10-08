@@ -119,12 +119,12 @@ Route::view('/directmultimid','O11_Middleware.O4_Route_Middleware')->middleware(
 
 // 12 - Database Connection
 use App\Http\Controllers\O11_Database;
-
 Route::get('/db',[O11_Database::class,'users']);
 
 // Query Builder
 Route::get('/querybuilder',[O11_Database::class,'query']);
 
+Route::get('/eloquentquerybuilder',[O11_Database::class,'Eloquent']);
 
 
 // 13 - Model - To access or visualize data in web page
