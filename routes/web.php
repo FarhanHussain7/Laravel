@@ -97,6 +97,19 @@ Route::controller(O10_Route::class)->group(function(){
     Route::get('delete','Delete');
 });
 
+// Route Methods
+Route::get('/getmethods',[O10_Route::class,'GetUser']);
+Route::post('/postmethods',[O10_Route::class,'PostUser']);
+Route::put('/putmethods',[O10_Route::class,'PutUser']);
+Route::delete('/deletemethods',[O10_Route::class,'DeleteUser']);
+Route::any('/anymethods',[O10_Route::class,'AnyUser']);
+Route::match(['get','post'],'/matchmethods',[O10_Route::class,'MatchGetPost']);
+Route::match(['put','delete'],'/matchmethods',[O10_Route::class,'MatchPutDelete']);
+
+Route::view('/formdata','O10_Routes.O4_Route_Methods');
+
+
+
 // 11 - Middleware
 
 //  Indirect way : app.php file is in the middle
