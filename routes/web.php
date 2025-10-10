@@ -147,3 +147,8 @@ Route::get('/model',[O11_Database::class,'student']);
 use App\Http\Controllers\O14_Http_Client;
 Route::get('/http',[O14_Http_Client::class,'GetUser']);
 
+
+Route::get('/requestget',[O14_Http_Client::class,'Request']);
+Route::post('/requestpost',[O14_Http_Client::class,'RequestPost']);
+Route::view('/requestform','O14_Http_Client.O2_http_Request_class');
+
