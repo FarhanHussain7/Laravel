@@ -58,4 +58,16 @@ class O14_Http_Client extends Controller
 
     }
 
+// o3 - Session
+    function Session(Request $request){
+        // return $request->input();
+        $request->session()->put('name',$request->input('name'));
+        return redirect('/sessionform');
+        // echo session('name');
+    }
+
+    function Logout(){
+        session()->pull('name');
+        return redirect('/sessionform');
+    }
 }

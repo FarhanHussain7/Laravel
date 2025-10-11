@@ -144,11 +144,16 @@ Route::get('/eloquentquerybuilder',[O11_Database::class,'Eloquent']);
 Route::get('/model',[O11_Database::class,'student']);
 
 // 14 - Http
+// o1 - Http
 use App\Http\Controllers\O14_Http_Client;
 Route::get('/http',[O14_Http_Client::class,'GetUser']);
 
-
+// o2 - Request class
 Route::get('/requestget',[O14_Http_Client::class,'Request']);
 Route::post('/requestpost',[O14_Http_Client::class,'RequestPost']);
 Route::view('/requestform','O14_Http_Client.O2_http_Request_class');
 
+// o3 - Session
+Route::view('/sessionform','O14_Http_Client.O3_Session');
+Route::post('/sessionget',[O14_Http_Client::class,'Session']);
+Route::get('/sessionlogout',[O14_Http_Client::class,'Logout']);
