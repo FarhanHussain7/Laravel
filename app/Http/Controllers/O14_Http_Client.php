@@ -70,4 +70,14 @@ class O14_Http_Client extends Controller
         session()->pull('name');
         return redirect('/sessionform');
     }
+
+
+    // o4 - Flash session controller
+    function Flash(Request $request){
+         $request->session()->Flash('message','User Added Successfully');
+         $request->session()->keep('message','User Added Successfully');
+
+        return redirect('/flashform');
+    }
+
 }

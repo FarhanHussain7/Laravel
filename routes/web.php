@@ -157,3 +157,8 @@ Route::view('/requestform','O14_Http_Client.O2_http_Request_class');
 Route::view('/sessionform','O14_Http_Client.O3_Session');
 Route::post('/sessionget',[O14_Http_Client::class,'Session']);
 Route::get('/sessionlogout',[O14_Http_Client::class,'Logout']);
+
+// o4 - Flash session
+Route::view('/flashform','O14_Http_Client.O4_Flash_session');
+Route::post('/flashpost',[O14_Http_Client::class,'Flash']);
+
