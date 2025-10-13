@@ -10,25 +10,35 @@
 <br/>
 <a href="/controller">O4_Controller</a>
 <br/>
-<a href="/getname">O4_Controller_Para</a>
+    <li>
+        <a href="/getname">O4_Controller_Para</a>
+    </li>
 <br/>
 <a href="/view">O5_View </a>
 <br/>
 <a href="/subview">O7_SubView</a>
 <br/>
-<a href="/subabout">O7_SubAbout</a>
+    <li>
+        <a href="/subabout">O7_SubAbout</a>
+    </li>
 <br/>
 <a href="/comp">O8_Component</a>
 <br/>
 <a href="/form">O9_Form_Data</a>
 <br/>
-<a href="/check">O9_CheckBox and Radio Button</a>
+    <li>
+        <a href="/check">O9_CheckBox and Radio Button</a>
+    </li>
 <br/>
-<a href="/valid">O9_Form_Validation</a>
+    <li>
+        <a href="/valid">O9_Form_Validation</a>
+    </li>
 <br/>
 <a href="{{URL::to('url')}}">1O_Routes</a>
 <br/>
-<a href="{{route('nr')}}">1O_Named_routes</a>
+    <li>
+        <a href="{{route('nr')}}">1O_Named_routes</a>
+    </li>
 <br/>
 <a href="/middleware">11_Middleware</a>
 <br/>
@@ -36,7 +46,7 @@
 <br/>
 <a href="/model">13_Model</a>
 <br/>
-<a href="/subview">O7_SubView</a>
+<a href="/http">14_Http</a>
 <br/>
 <a href="/subview">O7_SubView</a>
 <br/>

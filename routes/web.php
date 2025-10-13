@@ -143,6 +143,8 @@ Route::get('/eloquentquerybuilder',[O11_Database::class,'Eloquent']);
 // 13 - Model - To access or visualize data in web page
 Route::get('/model',[O11_Database::class,'student']);
 
+
+
 // 14 - Http
 // o1 - Http
 use App\Http\Controllers\O14_Http_Client;
@@ -161,4 +163,9 @@ Route::get('/sessionlogout',[O14_Http_Client::class,'Logout']);
 // o4 - Flash session
 Route::view('/flashform','O14_Http_Client.O4_Flash_session');
 Route::post('/flashpost',[O14_Http_Client::class,'Flash']);
+
+// 14 - File
+use App\Http\Controllers\O15_File;
+Route::view('/file','O15_File.O1_Upload');
+Route::post('/upload',[O15_File::class,'Upload']);
 
