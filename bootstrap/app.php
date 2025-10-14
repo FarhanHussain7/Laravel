@@ -6,7 +6,7 @@ use Illuminate\Foundation\Configuration\Middleware;
 use App\Http\Middleware\elevenPart;
 use App\Http\Middleware\AgeCheck;
 use App\Http\Middleware\CountryCheck;
-
+use App\Http\Middleware\O16_SetLang;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -23,6 +23,14 @@ return Application::configure(basePath: dirname(__DIR__))
             AgeCheck::class,
             CountryCheck::class,
         ]);
+
+        // 16 - Localization
+        $middleware->appendToGroup('O16_SetLang',[
+            AgeCheck::class,
+            CountryCheck::class,
+        ]);
+
+
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

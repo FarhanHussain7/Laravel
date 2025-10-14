@@ -164,8 +164,23 @@ Route::get('/sessionlogout',[O14_Http_Client::class,'Logout']);
 Route::view('/flashform','O14_Http_Client.O4_Flash_session');
 Route::post('/flashpost',[O14_Http_Client::class,'Flash']);
 
-// 14 - File
+// 15 - File
 use App\Http\Controllers\O15_File;
 Route::view('/file','O15_File.O1_Upload');
 Route::post('/upload',[O15_File::class,'Upload']);
 
+// 16 - Localization :-  Showing local language according to the country
+Route::view('/locwelcome','O16_Localization.O1_welcome');
+Route::view('/locabout','O16_Localization.O2_About');
+Route::view('/lochome','O16_Localization.O3_Home');
+Route::view('/loccontact','O16_Localization.O4_Contactus');
+
+Route::get('/locabout/{lang}', function ($lang) {
+    App::setlocale($lang);
+    return view('O16_Localization.O2_About');
+});
+
+Route::get('/setlang/{lang}', function ($lang) {
+    Session::put('lang',$lang);
+    return view('O16_Localization.O1_welcome');
+});
