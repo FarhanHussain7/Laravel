@@ -9,7 +9,7 @@ use App\Models\User;
 use Carbon\Carbon;
 class O11_Database extends Controller
 {
-    //
+    // O1 ---------------------------------------------------------------------------------------------------------------------------------
 // Connection and print data
     function users(){
         $users=  DB::select('select * from users');
@@ -21,7 +21,7 @@ class O11_Database extends Controller
         return view('O13_Model.O1_mvc',['student'=>$stu]);
     }
 
-    // Query Builder
+    //O2 Query Builder -------------------------------------------------------------------------------------------------------------------
      function query(){
         // ============= Read Data ================================
         $users=  DB::table('users')->get();
@@ -70,15 +70,19 @@ class O11_Database extends Controller
         // }
     }
 
+    // O3 - Eloquent Query ---------------------------------------------------------------------------------------------------------------
         function Eloquent(){
+
+// READ DATA --------------------------
             // $response = User::all();
             // $response = User::get();
+// FIND SELECTIVE DATA ------------------------
             // $response = User::where('name',"tony kakar")->get();
             // $response = User::find(1);
             // $response = [$response];
-
         //  return view('O12_Database.O3_Eloquent_Query',['users'=>$response]);
 
+// INSERT DATA ---------------------------
 //             $users = User::insert([
 //     'name' => 'Sona Lal',
 //     'email' => 'sonaji@gmail.com',
@@ -95,23 +99,23 @@ class O11_Database extends Controller
 //         }
 
 
-
+//  UPDATE DATA -------------------
         // $users = User::where('name','Sona Lal')->update(['email'=>'soonaaji@gmail.com']);
         // if($users){
         //     return "Data Updated Sucessfully";
         // }else{
         //     return "Not Updated ";
         // }
-
+// DELETE DATA ---------------------
         $users = User::where('name','Sona Lal')->delete();
         if($users){
             return "Data Deleted Sucessfully";
         }else{
             return "Not Deleted ";
         }
-
-
-
         }
+
+// O4 - Insert Data -----------------------------------------------------------------------------------------------------------------
+
 
 }

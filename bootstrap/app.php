@@ -25,10 +25,7 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
 
         // 16 - Localization
-        $middleware->appendToGroup('O16_SetLang',[
-            AgeCheck::class,
-            CountryCheck::class,
-        ]);
+        $middleware->appendToGroup('SetLang',O16_SetLang::class);
 
 
     })

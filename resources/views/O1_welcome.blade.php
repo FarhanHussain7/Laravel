@@ -48,7 +48,7 @@
 <br/>
 <a href="/http">14_Http</a>
 <br/>
-<a href="/subview">O7_SubView</a>
+<a href="/locwelcome">16_Localization</a>
 <br/>
 <a href="/subview">O7_SubView</a>
 <br/>

@@ -15,6 +15,10 @@ class O16_SetLang
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if($request->session()->get('lang')){
+        \App::setLocale($request->session()->get('lang'));
+
+        }
         return $next($request);
     }
 }
