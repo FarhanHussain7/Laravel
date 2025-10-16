@@ -132,12 +132,22 @@ Route::view('/directmultimid','O11_Middleware.O4_Route_Middleware')->middleware(
 
 // 12 - Database Connection
 use App\Http\Controllers\O11_Database;
+// o1 - Connection to data
 Route::get('/db',[O11_Database::class,'users']);
 
-// Query Builder
+// o2 - Query Builder
 Route::get('/querybuilder',[O11_Database::class,'query']);
-
+// o3 - Eloquent Query
 Route::get('/eloquentquerybuilder',[O11_Database::class,'Eloquent']);
+
+// o4 - Insert data
+Route::view('/insertform','O12_Database.O4_Insert_Data');
+Route::post('/insertdata',[O11_Database::class,'InsertData']);
+// o5 - Read Data
+Route::get('/readdata',[O11_Database::class,'READ']);
+// o6 - Delete Data
+Route::get('/deletedata/{id}',[O11_Database::class,'DELETEDATA']);
+
 
 
 // 13 - Model - To access or visualize data in web page

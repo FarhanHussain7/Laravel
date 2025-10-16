@@ -116,6 +116,36 @@ class O11_Database extends Controller
         }
 
 // O4 - Insert Data -----------------------------------------------------------------------------------------------------------------
+// Insert data in students table
+        function InsertData(Request $request){
+            $student= new Student();
+            $student->name=$request->name;
+            $student->email=$request->email;
+            $student->batch=$request->batch;
+            $student->save();
+            if($student){
+               return redirect('/readdata');
+            }
+            else{
+                echo "Not Inserted ";
+            }
 
+            // return "Data is added";
+        }
+
+        function READ(){
+            $studentData = Student::all();
+
+            return view('O12_Database.O5_Read_data',['students'=>$studentData]);
+        }
+
+        function DELETEDATA($std){
+            $DataDeleted = Student::destroy($std);
+            if($DataDeleted){
+               return redirect('/readdata');
+            }else{
+                echo "Data Not Deleted";
+            }
+        }
 
 }

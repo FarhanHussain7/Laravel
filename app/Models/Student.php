@@ -8,7 +8,10 @@ class Student extends Model
 {
     //
 
-    function test(){
-        echo " this is inside function ";
-    }
+    // function test(){
+    //     echo " this is inside function ";
+    // }
+
+    public $timestamps = false;
+
 }
