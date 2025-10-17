@@ -132,21 +132,23 @@ Route::view('/directmultimid','O11_Middleware.O4_Route_Middleware')->middleware(
 
 // 12 - Database Connection
 use App\Http\Controllers\O11_Database;
-// o1 - Connection to data
-Route::get('/db',[O11_Database::class,'users']);
+        // o1 - Connection to data
+            Route::get('/db',[O11_Database::class,'users']);
 
-// o2 - Query Builder
-Route::get('/querybuilder',[O11_Database::class,'query']);
-// o3 - Eloquent Query
-Route::get('/eloquentquerybuilder',[O11_Database::class,'Eloquent']);
-
-// o4 - Insert data
-Route::view('/insertform','O12_Database.O4_Insert_Data');
-Route::post('/insertdata',[O11_Database::class,'InsertData']);
-// o5 - Read Data
-Route::get('/readdata',[O11_Database::class,'READ']);
-// o6 - Delete Data
-Route::get('/deletedata/{id}',[O11_Database::class,'DELETEDATA']);
+        // o2 - Query Builder
+            Route::get('/querybuilder',[O11_Database::class,'query']);
+        // o3 - Eloquent Query
+            Route::get('/eloquentquerybuilder',[O11_Database::class,'Eloquent']);
+        // o4 - Insert data
+            Route::view('/insertform','O12_Database.O4_Insert_Data');
+            Route::post('/insertdata',[O11_Database::class,'InsertData']);
+        // o5 - Read Data
+            Route::get('/readdata',[O11_Database::class,'READ']);
+        // o6 - Delete Data
+            Route::get('/deletedata/{id}',[O11_Database::class,'DELETEDATA']);
+         // o7 - Update Data
+            Route::get('/editdata/{id}',[O11_Database::class,'EDITDATA']);
+            Route::put('/updatedata/{id}',[O11_Database::class,'UPDATEDATA']);
 
 
 
@@ -156,23 +158,23 @@ Route::get('/model',[O11_Database::class,'student']);
 
 
 // 14 - Http
-// o1 - Http
 use App\Http\Controllers\O14_Http_Client;
-Route::get('/http',[O14_Http_Client::class,'GetUser']);
+        // o1 - Http
+            Route::get('/http',[O14_Http_Client::class,'GetUser']);
 
-// o2 - Request class
-Route::get('/requestget',[O14_Http_Client::class,'Request']);
-Route::post('/requestpost',[O14_Http_Client::class,'RequestPost']);
-Route::view('/requestform','O14_Http_Client.O2_http_Request_class');
+        // o2 - Request class
+            Route::get('/requestget',[O14_Http_Client::class,'Request']);
+            Route::post('/requestpost',[O14_Http_Client::class,'RequestPost']);
+            Route::view('/requestform','O14_Http_Client.O2_http_Request_class');
 
-// o3 - Session
-Route::view('/sessionform','O14_Http_Client.O3_Session');
-Route::post('/sessionget',[O14_Http_Client::class,'Session']);
-Route::get('/sessionlogout',[O14_Http_Client::class,'Logout']);
+        // o3 - Session
+            Route::view('/sessionform','O14_Http_Client.O3_Session');
+            Route::post('/sessionget',[O14_Http_Client::class,'Session']);
+            Route::get('/sessionlogout',[O14_Http_Client::class,'Logout']);
 
-// o4 - Flash session
-Route::view('/flashform','O14_Http_Client.O4_Flash_session');
-Route::post('/flashpost',[O14_Http_Client::class,'Flash']);
+        // o4 - Flash session
+            Route::view('/flashform','O14_Http_Client.O4_Flash_session');
+            Route::post('/flashpost',[O14_Http_Client::class,'Flash']);
 
 // 15 - File
 use App\Http\Controllers\O15_File;

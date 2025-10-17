@@ -148,4 +148,24 @@ class O11_Database extends Controller
             }
         }
 
+        function EDITDATA($std){
+            $Dataedit = Student::find($std);
+               return view('O12_Database.O7_Edit_data',['data'=>$Dataedit]);
+        }
+
+        function UPDATEDATA(Request $request, $std){
+             $student = Student::find($std);
+             $student->name=$request->name;
+            $student->email=$request->email;
+            $student->batch=$request->batch;
+            $student->save();
+            if($student){
+               return redirect('/readdata');
+            }
+            else{
+                echo "Not Inserted ";
+            }
+            //    return $request->input();
+        }
+
 }

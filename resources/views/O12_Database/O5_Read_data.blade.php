@@ -7,6 +7,8 @@
             <td>Email</td>
             <td>Batch</td>
             <td>Operation</td>
+            <td>Update</td>
+
 
         </tr>
         @foreach($students as $user)
@@ -15,6 +17,7 @@
             <td>{{$user->email}}</td>
             <td>{{$user->batch}}</td>
             <td><a href="{{'deletedata/'.$user->id}}">Delete</a></td>
+            <td><a href="{{'editdata/'.$user->id}}">Edit</a></td>
         </tr>
         @endforeach
     </table>

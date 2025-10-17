@@ -11,7 +11,22 @@
 <a href="/controller">O4_Controller</a>
 <br/>
     <li>
-        <a href="/getname">O4_Controller_Para</a>
+        <a href="/controller">O1_Controller_Para</a>
+    </li>
+    <li>
+        <a href="/about">O2_About_Controller</a>
+    </li>
+    <li>
+        <a href="/getname/{name}">O3_Getname_Controller</a>
+    </li>
+    <li>
+        <a href="/view">O4_View_Controller</a>
+    </li>
+    <li>
+        <a href="/conuser/{name}">O5_Controller</a>
+    </li>
+    <li>
+        <a href="/admin">O6_View_page_Controller</a>
     </li>
 <br/>
 <a href="/view">O5_View </a>
@@ -44,13 +59,14 @@
 <br/>
 <a href="/db">12_Database</a>
 <br/>
+    <a href="/insertform">12_SubView</a>
+<br/>
 <a href="/model">13_Model</a>
 <br/>
 <a href="/http">14_Http</a>
 <br/>
 <a href="/locwelcome">16_Localization</a>
 <br/>
-<a href="/subview">O7_SubView</a>
 <br/>
 <a href="/subview">O7_SubView</a>
 <br/>

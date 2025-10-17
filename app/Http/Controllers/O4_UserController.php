@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 //php artisan make:controller YourControllerName
 class O4_UserController extends Controller
 {
+
     function GetUser(){
         return "Farhan Hussain";
     }
