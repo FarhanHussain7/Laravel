@@ -132,9 +132,11 @@ class O11_Database extends Controller
 
             // return "Data is added";
         }
-
+// O5 - Read Data ===============================================================================
         function READ(){
-            $studentData = Student::all();
+            // $studentData = Student::all();
+            // Pagination function with limit of 3
+            $studentData = Student::paginate(3);
 
             return view('O12_Database.O5_Read_data',['students'=>$studentData]);
         }
@@ -166,6 +168,12 @@ class O11_Database extends Controller
                 echo "Not Inserted ";
             }
             //    return $request->input();
+        }
+
+        function SEARCHDATA(Request $request){
+            $searchData = Student::where('name','like',"%$request->search%")->get();
+            // return $searchData;
+            return view('O12_Database.O5_Read_data',['students'=>$searchData,'search'=>$request->search]);
         }
 
 }

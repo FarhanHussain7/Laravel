@@ -149,6 +149,8 @@ use App\Http\Controllers\O11_Database;
          // o7 - Update Data
             Route::get('/editdata/{id}',[O11_Database::class,'EDITDATA']);
             Route::put('/updatedata/{id}',[O11_Database::class,'UPDATEDATA']);
+        // o8 - Search
+            Route::get('/search',[O11_Database::class,'SEARCHDATA']);
 
 
 
