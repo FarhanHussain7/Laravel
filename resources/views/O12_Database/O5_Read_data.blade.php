@@ -6,8 +6,13 @@
             <button>search</button>
     </form>
     <button><a href="/insertform" class="insert-btn">Insert Data</a></button>
+
+    <form action="/deletemulti" method="post">
+        @csrf
+        <button class="deletemul">Delete Multi</button>
     <table border="1">
         <tr>
+            <td>Select</td>
             <td>Name</td>
             <td>Email</td>
             <td>Batch</td>
@@ -18,6 +23,7 @@
         </tr>
         @foreach($students as $user)
         <tr>
+            <td><input type="checkbox" name="ids[]" value="{{$user->id}}"></td>
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
             <td>{{$user->batch}}</td>
@@ -26,6 +32,8 @@
         </tr>
         @endforeach
     </table>
+
+    </form>
     <!-- This is pageination link so now only few data is visible for further you have to go to next page -->
     {{$students->links()}}
 </div>
@@ -163,5 +171,9 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+/* Delete multiple */
+.deletemul{
+    border: 2px solid white;
 }
 </style>

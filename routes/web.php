@@ -151,6 +151,12 @@ use App\Http\Controllers\O11_Database;
             Route::put('/updatedata/{id}',[O11_Database::class,'UPDATEDATA']);
         // o8 - Search
             Route::get('/search',[O11_Database::class,'SEARCHDATA']);
+        // o9 - Delete multiple
+            Route::post('/deletemulti',[O11_Database::class,'DELETEMULTIPLE']);
+        // 10 -
+            Route::view('/uploadform','O12_Database.O8_Upload_Image');
+            Route::post('/uploadform',[O11_Database::class,'UPLOADIMAGE']);
+            Route::get('/viewuploadimg',[O11_Database::class,'VIEWIMAGE']);
 
 
 
@@ -178,9 +184,9 @@ use App\Http\Controllers\O14_Http_Client;
             Route::view('/flashform','O14_Http_Client.O4_Flash_session');
             Route::post('/flashpost',[O14_Http_Client::class,'Flash']);
 
-// 15 - File
+// 15 - Upload File
 use App\Http\Controllers\O15_File;
-Route::view('/file','O15_File.O1_Upload');
+Route::view('/file','O15_Upload_Files.O1_Upload');
 Route::post('/upload',[O15_File::class,'Upload']);
 
 // 16 - Localization :-  Showing local language according to the country

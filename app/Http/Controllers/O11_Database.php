@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Student;
 use App\Models\User;
+use App\Models\image;
 use Carbon\Carbon;
 class O11_Database extends Controller
 {
@@ -176,4 +177,32 @@ class O11_Database extends Controller
             return view('O12_Database.O5_Read_data',['students'=>$searchData,'search'=>$request->search]);
         }
 
+
+            function DELETEMULTIPLE(Request $request){
+            $DataDeleted = Student::destroy($request->ids);
+            if($DataDeleted){
+               return redirect('/readdata');
+            }else{
+                echo "Data Not Deleted";
+            }
+        }
+
+        function UPLOADIMAGE(Request $request){
+            $path = $request->file('file')->store('Images','public');
+            $PathArray = explode("/", $path);
+            $imgPath=$PathArray[1];
+            $img = new image();
+            $img->path=$imgPath;
+            // return $img->save();
+            if ($img->save()){
+                return redirect('/viewuploadimg');
+            }else{
+                return "Error ! No Image Upload";
+            }
+        }
+
+        function VIEWIMAGE(){
+            $images = image::all();
+            return view('O12_Database.O8_Upload_Image', ['imgData' => $images]);
+        }
 }
