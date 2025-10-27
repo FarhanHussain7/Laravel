@@ -207,3 +207,10 @@ Route::middleware('SetLang')->group(function(){
     return view('O16_Localization.O1_welcome');
     });
 });
+
+// 17 -
+
+Route::view('/layoutlogin','O17_Layout.O1_Login');
+Route::view('/layout','O17_Layout.O2_About');
+Route::view('/layouthome','O17_Layout.O4_Home');
+Route::view('/layoutwelcome','O17_Layout.O3_Welcome');
