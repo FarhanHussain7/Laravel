@@ -68,7 +68,7 @@
 <a href="/locwelcome">16_Localization</a>
 <br/>
 <br/>
-<a href="/subview">O7_SubView</a>
+<a href="/layout">17_Layout</a>
 <br/>
 <a href="/subview">O7_SubView</a>
 <br/>

@@ -214,3 +214,8 @@ Route::view('/layoutlogin','O17_Layout.O1_Login');
 Route::view('/layout','O17_Layout.O2_About');
 Route::view('/layouthome','O17_Layout.O4_Home');
 Route::view('/layoutwelcome','O17_Layout.O3_Welcome');
+
+Route::view('/inheritlogin','O17_Layout.O2_Template_Inheritance.O1_login');
+Route::view('/inherithome','O17_Layout.O2_Template_Inheritance.O2_home');
+
+
