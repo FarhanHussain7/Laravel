@@ -1,0 +1,24 @@
+🧩 What Are Laravel Stubs?
+- Stubs are template files used by Artisan commands to generate code.
+- They contain placeholders like {{ class }} or {{ namespace }}.
+- Laravel replaces these placeholders when you run commands like make:model.
+
+
+📁 How to Publish Stubs
+- Run this command:
+php artisan stub:publish
+- Laravel copies its internal stubs to your project’s /stubs folder.
+- You can now edit these files to customize generated code.
+
+
+📂 Common Stub Files You’ll See
+- controller.stub → used by make:controller
+- model.stub → used by make:model
+- factory.stub → used by make:factory
+- migration.stub → used by make:migration
+- seeder.stub → used by make:seeder
+- request.stub → used by make:request
+- resource.stub → used by make:resource
+- test.stub → used by make:test
+
+

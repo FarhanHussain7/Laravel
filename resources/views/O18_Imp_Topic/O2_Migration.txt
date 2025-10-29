@@ -1,0 +1,80 @@
+Laravel migrations are version-controlled PHP files that define changes to your database schema.
+ They help teams collaborate and keep databases in sync.
+
+ 🧩 What Is a Migration?
+- A migration is a PHP class that defines how to create or modify database tables.
+- It acts like version control for your database schema.
+- You write migrations instead of raw SQL — Laravel handles the execution.
+
+
+🛠️ How to Create a Migration
+- Run:
+php artisan make:migration create_posts_table
+- This creates a file in database/migrations/ with a timestamp prefix.
+- The filename is usually in snake_case and describes the action
+
+📦 Migration File Structure
+- Each migration class has two methods:
+public function up() { ... }   // Apply changes
+public function down() { ... } // Rollback changes
+- Inside up(), you define the schema using Laravel’s Schema builder.
+- Example:
+Schema::create('posts', function (Blueprint $table) {
+    $table->id();
+    $table->string('title');
+    $table->text('body');
+    $table->timestamps();
+});
+
+
+ Running Migrations
+- Apply all pending migrations:
+php artisan migrate
+- Laravel creates a migrations table to track which migrations have run.
+- Each migration is executed in order by timestamp.
+
+
+🔄 Rolling Back Migrations
+- Roll back the last batch:
+php artisan migrate:rollback
+- Roll back all migrations:
+php artisan migrate:reset
+- Roll back and re-run:
+php artisan migrate:refresh
+
+
+🧹 Clean Migration History
+- Drop all tables and re-run migrations:
+php artisan migrate:fresh
+
+
+
+🧪 Common Migration Column Type
+|  |  |
+| $table->id() |  |
+| $table->string('name') |  |
+| $table->text('description') |  |
+| $table->boolean('is_active') |  |
+| $table->timestamps() | created_atupdated_at |
+
+
+
+🔐 Foreign Keys and Indexes
+- Add foreign key:
+$table->foreignId('user_id')->constrained();
+- Add index:
+$table->index('title');
+
+
+
+🧠 Pro Tips
+- Use php artisan migrate:status to check which migrations have run.
+- Use --path to run migrations from a specific folder.
+- Use --pretend to preview SQL without executing:
+php artisan migrate --pretend
+
+
+
+
+
+
