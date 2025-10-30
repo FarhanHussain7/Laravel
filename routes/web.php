@@ -219,3 +219,9 @@ Route::middleware('SetLang')->group(function(){
         Route::view('/inherithome','O17_Layout.O2_Template_Inheritance.O2_home');
 
 
+//
+
+use App\Http\Controllers\O19_Accessor;
+
+    Route::get('/assceor',[O19_Accessor::class,"List"]);
+    Route::get('/mutator',[O19_Accessor::class,"Mutator"]);

@@ -1,0 +1,54 @@
+Laravel maintenance involves keeping your application secure, performant, and up-to-date through regular updates,
+code hygiene, and automation
+
+
+⚙️ Framework & Dependency Updates
+- Always use the latest stable Laravel version.
+- Run composer update regularly to keep packages fresh.
+- Use composer outdated to audit stale dependencies.
+
+🧼 Codebase Hygiene
+- Stick to Laravel’s default folder structure for consistency.
+- Use PSR-12 coding standards and run tools like php-cs-fixer.
+- Remove unused classes, traits, and service providers.
+
+🧪 Testing & Debugging
+- Write unit tests using PHPUnit or Pest.
+- Use feature tests to simulate user interactions.
+- Prevent N+1 queries with Eloquent’s with() eager loading.
+- Enable strict mode in Eloquent (Model::preventLazyLoading()).
+
+🔐 Security Practices
+- Use Laravel’s built-in CSRF protection.
+- Validate all inputs using Form Requests.
+- Sanitize user data before storage or display.
+- Keep .env secrets out of version control.
+
+📦 Database Maintenance
+- Use anonymous migrations (return new class extends Migration) to avoid class name collisions.
+- Always define both up() and down() methods in migrations.
+- Run php artisan migrate:status to audit migration health.
+
+🧹 Cleanup & Optimization
+- Schedule php artisan optimize:clear weekly.
+- Prune old logs with php artisan log:clear or custom scheduler.
+- Use php artisan config:cache and route:cache for performance.
+- Dispatch long-running jobs with dispatchAfterResponse().
+
+📊 Monitoring & Reporting
+- Use Laravel Telescope or Ray for debugging and insights.
+- Monitor queue failures with php artisan queue:failed.
+- Log slow queries and exceptions using Monolog or Sentry.
+
+📅 Scheduled Tasks
+- Use App\Console\Kernel to define cron jobs.
+- Run php artisan schedule:run via system cron every minute.
+- Automate backups, cleanup, and email reports.
+
+🧰 DevOps & Deploymen
+- Use .env for environment-specific configs.
+- Automate deployment with tools like Envoyer, Deployer, or GitHub Actions.
+- Run php artisan down before deploying and php artisan up after.
+
+
+

@@ -1,0 +1,22 @@
+Laravel seeding is the process of populating your database with sample or default data using seed classes.
+It’s essential for testing, development, and setting up initial values.
+
+What Is Database Seeding?
+- Seeding means inserting data into your database automatically.
+- It’s used for testing, development, or setting up default values.
+- Laravel uses Seeder classes to define what data to insert.
+
+🛠️ How to Create a Seeder
+- Run this Artisan command:
+php artisan make:seeder UserSeeder
+- This creates a file in database/seeders/UserSeeder.php.
+- The class will look like:
+class UserSeeder extends Seeder {
+    public function run() {
+        // Insert data here
+    }
+}
+
+
+
+
