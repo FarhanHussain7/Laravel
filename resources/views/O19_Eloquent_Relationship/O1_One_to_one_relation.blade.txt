@@ -1,0 +1,57 @@
+In Laravel's Eloquent ORM, a one-to-one relationship is used when one model is associated with exactly one instance of another model. This is common in cases like:
+- A User has one Profile
+- A Post has one MetaData
+- A Company has one Address
+Here’s how it works:
+
+🧩 Defining a One-to-One Relationship
+1. In the Parent Model (e.g., User)
+public function profile()
+{
+    return $this->hasOne(Profile::class);
+}
+
+
+- hasOne() defines the relationship.
+- Laravel assumes the foreign key is user_id in the profiles table.
+2. In the Related Model (e.g., Profile)
+public function user()
+{
+    return $this->belongsTo(User::class);
+}
+
+
+- belongsTo() is used on the inverse side.
+- This tells Eloquent that Profile belongs to a User.
+
+🧪 Example Schema
+|  |  |
+|  |  |
+|  |  |
+
+
+- profiles.user_id is the foreign key referencing users.id.
+
+🔍 Usage
+$user = User::find(1);
+$profile = $user->profile;
+
+echo $profile->bio;
+
+
+You can also eager load:
+$users = User::with('profile')->get();
+
+
+
+🛠 Custom Foreign Key or Local Key
+If your foreign key or local key differs from Laravel’s default:
+return $this->hasOne(Profile::class, 'foreign_key', 'local_key');
+
+
+Example:
+return $this->hasOne(Profile::class, 'user_ref_id', 'id');
+
+
+
+

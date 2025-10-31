@@ -40,6 +40,5 @@ class O19_Accessor extends Controller
         }else{
             echo "Not Inserted";
         }
-
     }
 }
