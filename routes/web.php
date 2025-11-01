@@ -225,3 +225,7 @@ use App\Http\Controllers\O19_Accessor;
 
     Route::get('/assceor',[O19_Accessor::class,"List"]);
     Route::get('/mutator',[O19_Accessor::class,"Mutator"]);
+// Email -------------
+
+use App\Http\Controllers\O20_MailController;
+Route::get('/email',[O20_MailController::class,'SendEmail']);
