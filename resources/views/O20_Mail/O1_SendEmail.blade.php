@@ -61,7 +61,6 @@ Create a file at resources/views/emails/welcome.blade.php:
     <title>Welcome Email</title>
 </head>
 <body>
-    <h1>Hello, {{ $details['name'] }}</h1>
     <p>Thank you for joining us!</p>
 </body>
 </html>
@@ -98,8 +97,6 @@ Visit http://localhost:8000/send-email in your browser. You should see "Email se
 - Queue emails with implements ShouldQueue in your Mailable class for better performance.
 
 -->
-
-
 </div>
 <!DOCTYPE html>
 <html lang="en">

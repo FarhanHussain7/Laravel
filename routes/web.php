@@ -218,8 +218,26 @@ Route::middleware('SetLang')->group(function(){
         Route::view('/inheritlogin','O17_Layout.O2_Template_Inheritance.O1_login');
         Route::view('/inherithome','O17_Layout.O2_Template_Inheritance.O2_home');
 
+// 18 - Important topics
 
-//
+// O5 - fluent string
+        $info="hiii, let's learn laravel";
+        $info=Str::ucfirst($info);
+        $info=Str::replaceFirst("hiii","Hello",$info);
+        $info=Str::camel($info);
+        // echo $info;
+
+        $info=Str::of($info)
+                ->ucfirst($info)
+                ->replaceFirst("hiii","Hello",$info)
+                ->camel($info);
+
+        //O6- Route model binding
+use App\Http\Controllers\O18_Imp_Topic;
+        Route::get('/routebinding/{key:name}',[O18_Imp_Topic::class,'index']);
+
+
+
 
 use App\Http\Controllers\O19_Accessor;
 
@@ -229,3 +247,6 @@ use App\Http\Controllers\O19_Accessor;
 
 use App\Http\Controllers\O20_MailController;
 Route::get('/email',[O20_MailController::class,'SendEmail']);
+Route::post('/emailform',[O20_MailController::class,'EmailForm']);
+Route::view('/send-email','O20_Mail.O2_Send_email_with_form');
+
