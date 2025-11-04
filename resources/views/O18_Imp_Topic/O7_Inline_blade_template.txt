@@ -1,0 +1,44 @@
+Inline Blade templates in Laravel allow you to define reusable UI components directly within your Blade files, without creating separate class-based components.
+Here’s a breakdown of how they work and when to use them:
+
+🧩 What Are Inline Blade Templates?
+Inline Blade templates—also known as inline components—are a way to define small, reusable chunks of HTML and Blade logic directly inside your Blade views. They’re ideal for simple UI elements like buttons, alerts, or cards that don’t require a full component class.
+
+⚙️ How to Use Inline Components
+You define an inline component using the @component directive and close it with @endcomponent. Here’s a basic example:
+@component('components.alert')
+    <strong>Heads up!</strong> This is an alert.
+@endcomponent
+
+
+But with inline components, you can skip the separate file and define it directly:
+@props(['type' => 'info'])
+
+<div class="alert alert-{{ $type }}">
+    {{ $slot }}
+</div>
+
+
+This can be placed in resources/views/components/alert.blade.php and used like:
+<x-alert type="warning">
+    <strong>Warning!</strong> Something went wrong.
+</x-alert>
+
+
+
+🧠 Key Features
+- No need for a class: Inline components are purely Blade-based.
+- Props support: Use @props to define expected attributes.
+- Slots: The {{ $slot }} variable allows you to inject content.
+- Anonymous components: You can use them without registering in App\View\Components.
+
+🛠️ When to Use Inline Components
+- For simple UI elements that don’t need logic-heavy behavior.
+- When you want quick reuse without creating a PHP class.
+- To keep your Blade views clean and modular.
+
+📚 Resources
+- Laravel’s official Blade documentation covers inline components in depth.
+- Sling Academy offers a practical guide with examples and best practices.
+
+If you want annotated examples for alerts, cards, or buttons using inline Blade components, I can generate those next.

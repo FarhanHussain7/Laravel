@@ -40,7 +40,7 @@ class WelcomeEmail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'O20_Mail.O1_SendEmail',
+            view: 'O20_Mail.O1_Email_body',
         );
     }
 

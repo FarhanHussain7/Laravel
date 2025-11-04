@@ -236,6 +236,8 @@ Route::middleware('SetLang')->group(function(){
 use App\Http\Controllers\O18_Imp_Topic;
         Route::get('/routebinding/{key:name}',[O18_Imp_Topic::class,'index']);
 
+        // O7- Inline blade template
+        Route::get('/bladetemp',[O18_Imp_Topic::class,'Blade']);
 
 
 
@@ -250,3 +252,8 @@ Route::get('/email',[O20_MailController::class,'SendEmail']);
 Route::post('/emailform',[O20_MailController::class,'EmailForm']);
 Route::view('/send-email','O20_Mail.O2_Send_email_with_form');
 
+//  API
+
+use App\Http\Controllers\O21_API;
+
+Route::apiResource('posts', O21_API::class,'posta');

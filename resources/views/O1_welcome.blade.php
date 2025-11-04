@@ -81,8 +81,6 @@
 <a href="/subview">O7_SubView</a>
 <br/>
 
-
-<!-- TO run the Project give Command: php artisan serve -->
 <!-- TO run the Project give Command: php artisan serve -->
 
 <!DOCTYPE html>
