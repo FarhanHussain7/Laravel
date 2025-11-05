@@ -254,6 +254,6 @@ Route::view('/send-email','O20_Mail.O2_Send_email_with_form');
 
 //  API
 
-use App\Http\Controllers\O21_API;
+// use App\Http\Controllers\O21_API;
 
-Route::apiResource('posts', O21_API::class,'posta');
+// Route::apiResource('posts', O21_API::class);

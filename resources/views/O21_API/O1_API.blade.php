@@ -55,6 +55,8 @@ Let me know if you want to see how to use one of these in code—I can show you 
 
 Step-by-Step: Create an API in Laravel
 
+Note : run this : php artisan install:api
+
 1. Create a Laravel Project (if you haven’t already)
 laravel new my-api-project
 cd my-api-project
@@ -128,8 +130,6 @@ class PostController extends Controller
     }
 }
 
-
-
 5. Define API Routes
 Open routes/api.php and add:
 use App\Http\Controllers\Api\PostController;
@@ -167,6 +167,5 @@ php artisan make:resource PostResource
 
 Then return:
 return PostResource::collection(Post::all());
-
 
 -->

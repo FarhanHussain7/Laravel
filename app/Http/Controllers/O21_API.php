@@ -3,32 +3,41 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Post;
+use App\Models\Product;
+use App\Models\Student;
 
 class O21_API extends Controller
 {
     //
-    public function index() {
-        return Post::all();
+    public function list(){
+        return "This is just for checking";
     }
 
+
+    public function index() {
+        return Student::all();
+    }
+
+    public function AddStudent(Request $request) {
+        return $request->input();
+    }
+
+
     public function store(Request $request) {
-        return Post::create($request->all());
+        return Student::create($request->all());
     }
 
     public function show($id) {
-        return Post::find($id);
+        return Student::find($id);
     }
 
     public function update(Request $request, $id) {
-        $post = Post::find($id);
+        $post = Student::find($id);
         $post->update($request->all());
         return $post;
     }
 
     public function destroy($id) {
-        return Post::destroy($id);
+        return Student::destroy($id);
     }
-
-
 }
