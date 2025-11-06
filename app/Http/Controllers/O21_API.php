@@ -13,31 +13,68 @@ class O21_API extends Controller
         return "This is just for checking";
     }
 
-
+// GET
     public function index() {
         return Student::all();
     }
 
-    public function AddStudent(Request $request) {
-        return $request->input();
-    }
-
-
-    public function store(Request $request) {
-        return Student::create($request->all());
-    }
-
+//
     public function show($id) {
         return Student::find($id);
     }
 
-    public function update(Request $request, $id) {
-        $post = Student::find($id);
-        $post->update($request->all());
-        return $post;
+// POST
+    public function AddStudent(Request $request) {
+        // return $request->input();
+        $student = new Student();
+        $student->name=$request->name;
+        $student->email=$request->email;
+        $student->batch=$request->batch;
+        if($student->save()){
+            return ["Result"=>"Student Added......"];
+        }else {
+            return ["Result"=>"Operation faild"];
+        }
     }
 
-    public function destroy($id) {
-        return Student::destroy($id);
+
+    // PUT
+    public function update(Request $request) {
+        $student = Student::find($request->id);
+        $student->name=$request->name;
+        $student->email=$request->email;
+        $student->batch=$request->batch;
+        if($student->save()){
+            return ["Result"=>"Student Updated......"];
+        }else {
+            return ["Result"=>"Operation faild"];
+        }
     }
+
+    // DELETE
+    public function destroy($id) {
+        $student = Student::destroy($id);
+        if($student){
+            return ["Result"=>"Student Deleted......"];
+        }else {
+            return ["Result"=>"Operation faild"];
+        }
+    }
+
+
+
+// POST
+    // public function store(Request $request) {
+    //     return Student::create($request->all());
+    // }
+
+
+//PUT
+    // public function update(Request $request, $id) {
+    //     $post = Student::find($id);
+    //     $post->update($request->all());
+    //     return $post;
+    // }
+
+
 }

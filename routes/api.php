@@ -17,5 +17,8 @@ Route::get('/tesst',function(){
 
 Route::get('/listest',[O21_API::class,"list"]);
 Route::get('/list',[O21_API::class,"index"]);
+Route::get('/list/{id}',[O21_API::class,"show"]);
 Route::post('/addlist',[O21_API::class,"AddStudent"]);
-Route::apiResource('posts', O21_API::class);
+Route::put('/updatelist',[O21_API::class,"update"]);
+Route::delete('/deletelist/{id}',[O21_API::class,"destroy"]);
+// Route::apiResource('posts', O21_API::class);
