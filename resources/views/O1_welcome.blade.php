@@ -31,6 +31,14 @@
 <br/>
 <a href="/view">O5_View </a>
 <br/>
+<a href="/nested">O5_Nested_File </a>
+<br/>
+<a href="/check">O5_Check </a>
+<br/>
+<a href="/blade">O6_Blade</a>
+<br/>
+<a href="/bladearray">O6_Blade</a>
+<br/>
 <a href="/subview">O7_SubView</a>
 <br/>
     <li>
@@ -52,7 +60,19 @@
 <a href="{{URL::to('url')}}">1O_Routes</a>
 <br/>
     <li>
+        <a href="group/home">1O_Named_routes</a>
+    </li>
+    <li>
         <a href="{{route('nr')}}">1O_Named_routes</a>
+    </li>
+    <li>
+        <a href="{{route('nr')}}">1O_Named_routes</a>
+    </li>
+    <li>
+        <a href="{{route('nr')}}">1O_Named_routes</a>
+    </li>
+    <li>
+        <a href="getmethods">O_Get_user</a>
     </li>
 <br/>
 <a href="/middleware">11_Middleware</a>
@@ -70,15 +90,15 @@
 <br/>
 <a href="/layout">17_Layout</a>
 <br/>
-<a href="/subview">O7_SubView</a>
+<a href="/">O7_SubView</a>
 <br/>
-<a href="/subview">O7_SubView</a>
+<a href="/assceor">19_Asscesor</a>
 <br/>
-<a href="/subview">O7_SubView</a>
+<a href="/mutator">19_Mutator</a>
 <br/>
-<a href="/subview">O7_SubView</a>
+<a href="/emailform">20_Email</a>
 <br/>
-<a href="/subview">O7_SubView</a>
+<a href="/api/list">21_API</a>
 <br/>
 
 <!-- TO run the Project give Command: php artisan serve -->

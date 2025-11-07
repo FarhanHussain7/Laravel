@@ -57,24 +57,25 @@ Route::get('/comp', function (){
 
 
 // O9 - Form
-// o1 - simple text form data
-Route::get('/form', function(){
-    return view('O9_Form.O1_form_data');
-});
-Route::post('/adduser',[O9_FormController::class,'addUser']);
+        // o1 - simple text form data
+        Route::get('/form', function(){
+            return view('O9_Form.O1_form_data');
+        });
 
-// o2 - For CheckBox and Radio Button
-Route::get('/check', function(){
-    return view('O9_Form.O2_CheckBox_and_RadioBtn');
-});
-Route::post('/radio',[O9_FormController::class,'checkRadio']);
+        Route::post('/adduser',[O9_FormController::class,'addUser']);
 
-// o3 - For Validation of form
-Route::get('/valid', function(){
-    return view('O9_Form.O3_Validation_form');
-});
-// controller for validation
-Route::post('/validinfo',[O9_FormController::class,'Validation']);
+        // o2 - For CheckBox and Radio Button
+        Route::get('/check', function(){
+            return view('O9_Form.O2_CheckBox_and_RadioBtn');
+        });
+        Route::post('/radio',[O9_FormController::class,'checkRadio']);
+
+        // o3 - For Validation of form
+        Route::get('/valid', function(){
+            return view('O9_Form.O3_Validation_form');
+        });
+        // controller for validation
+        Route::post('/validinfo',[O9_FormController::class,'Validation']);
 
 // 10 - Routes
 //  o1 -
@@ -219,8 +220,7 @@ Route::middleware('SetLang')->group(function(){
         Route::view('/inherithome','O17_Layout.O2_Template_Inheritance.O2_home');
 
 // 18 - Important topics
-
-// O5 - fluent string
+        // O5 - fluent string
         $info="hiii, let's learn laravel";
         $info=Str::ucfirst($info);
         $info=Str::replaceFirst("hiii","Hello",$info);
@@ -233,27 +233,24 @@ Route::middleware('SetLang')->group(function(){
                 ->camel($info);
 
         //O6- Route model binding
-use App\Http\Controllers\O18_Imp_Topic;
+        use App\Http\Controllers\O18_Imp_Topic;
         Route::get('/routebinding/{key:name}',[O18_Imp_Topic::class,'index']);
 
         // O7- Inline blade template
         Route::get('/bladetemp',[O18_Imp_Topic::class,'Blade']);
 
 
-
+// 19 - Eloquent Relationship
 use App\Http\Controllers\O19_Accessor;
 
     Route::get('/assceor',[O19_Accessor::class,"List"]);
     Route::get('/mutator',[O19_Accessor::class,"Mutator"]);
-// Email -------------
 
+
+// 20 -  Email
 use App\Http\Controllers\O20_MailController;
 Route::get('/email',[O20_MailController::class,'SendEmail']);
 Route::post('/emailform',[O20_MailController::class,'EmailForm']);
 Route::view('/send-email','O20_Mail.O2_Send_email_with_form');
 
 //  API
-
-// use App\Http\Controllers\O21_API;
-
-// Route::apiResource('posts', O21_API::class);

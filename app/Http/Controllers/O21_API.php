@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Student;
+use Illuminate\Support\Facades\Validator;
 
 class O21_API extends Controller
 {
@@ -26,7 +27,19 @@ class O21_API extends Controller
 // POST
     public function AddStudent(Request $request) {
         // return $request->input();
-        $student = new Student();
+
+        // Validation
+        $rules = array(
+            'name'=>'required | min:2 | max:10',
+            'email'=>'email | required ',
+            'batch'=>'required | min:6 | max:16'
+        );
+        $validation = Validator::make($request->all(), $rules);
+
+        if($validation->fails()){
+            return $validation->errors();
+        }else{
+            $student = new Student();
         $student->name=$request->name;
         $student->email=$request->email;
         $student->batch=$request->batch;
@@ -34,6 +47,7 @@ class O21_API extends Controller
             return ["Result"=>"Student Added......"];
         }else {
             return ["Result"=>"Operation faild"];
+        }
         }
     }
 
@@ -61,6 +75,14 @@ class O21_API extends Controller
         }
     }
 
+    public function SearchByName($name){
+        $student = Student::where('name','like',"%$name%")->get();
+        if($student){
+          return ["Result"=>$student];
+        }else {
+            return ["Result"=>"Operation faild !no record found"];
+        }
+    }
 
 
 // POST
