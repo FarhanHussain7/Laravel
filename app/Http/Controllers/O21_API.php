@@ -84,19 +84,4 @@ class O21_API extends Controller
         }
     }
 
-
-// POST
-    // public function store(Request $request) {
-    //     return Student::create($request->all());
-    // }
-
-
-//PUT
-    // public function update(Request $request, $id) {
-    //     $post = Student::find($id);
-    //     $post->update($request->all());
-    //     return $post;
-    // }
-
-
 }
