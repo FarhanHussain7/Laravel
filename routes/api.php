@@ -17,16 +17,25 @@ Route::get('/tesst',function(){
 
 
 Route::get('/listest',[O21_API::class,"list"]);
-Route::get('/list',[O21_API::class,"index"]);
 Route::get('/list/{id}',[O21_API::class,"show"]);
 Route::post('/addlist',[O21_API::class,"AddStudent"]);
 Route::put('/updatelist',[O21_API::class,"update"]);
 Route::delete('/deletelist/{id}',[O21_API::class,"destroy"]);
 Route::get('/search/{name}',[O21_API::class,"SearchByName"]);
+// Searching the student by just name
+Route::get('/source',[O21_API::class,"SearchByName"]);
 
 
 // Route::apiResource('posts', O21_API::class);
 Route::resource('resource',ResourceController::class);
 
 
-Route::get('/source',[O21_API::class,"SearchByName"]);
+Route::post('/sanctumsign',[O21_API::class,"SignUp"]);
+Route::post('/sanctumlogin',[O21_API::class,"Login"]);
+
+Route::group(['middleware'=>"auth:sanctum"],function(){
+    Route::get('/sanctumlist',[O21_API::class,"UserList"]);
+    // Pass the token then access it
+    // Header - Authorization : Bearer <token>
+Route::get('/list',[O21_API::class,"index"]);
+});

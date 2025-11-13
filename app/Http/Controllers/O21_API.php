@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
-use App\Models\Student;
+use App\Models\Student; // It is used to Create CRUD Operations
+use App\Models\User; // It is used to create token with sanctum
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
 class O21_API extends Controller
@@ -75,6 +77,7 @@ class O21_API extends Controller
         }
     }
 
+    // Serching By The Student name
     public function SearchByName($name){
         $student = Student::where('name','like',"%$name%")->get();
         if($student){
@@ -84,4 +87,34 @@ class O21_API extends Controller
         }
     }
 
+
+    // ===================== SANCTUM ========================================
+// Creating Token With the Sanctum api
+// body :{ name: "", email:"" , password:""}
+    public function SignUp(Request $request){
+        $input = $request->all();
+        $input["password"] = bcrypt($input["password"]);
+        $user = User::create($input);
+        $success['token'] = $user->createToken('MyApp')->plainTextToken;
+        $user['name']=$user->name;
+        return ['success'=>true,"result"=>$success,"msg"=>"user register successfully"];
+    }
+
+// Login api --------------
+    public function Login(Request $request){
+            $user = User::where('email',$request->email)->first();
+            if(!$user || !Hash::check($request->password,$user->password)){
+                return ['result'=>"User Not found","Success"=>false];
+            }
+            $success['token']=$user->createToken('MyApp')->plainTextToken;
+            $success['name']=$user->name;
+
+        return ['result'=>$success, 'msg'=>"user register successfully"];
+    }
+
+//========= Test Token ================
+
+public function UserList() {
+        return User::all();
+    }
 }
