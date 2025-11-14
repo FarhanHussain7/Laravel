@@ -1,0 +1,41 @@
+Laravel 11 introduces a slimmed-down structure, simplified configuration, and new artisan command enhancements—making it faster and cleaner for modern development.
+
+🚀 Key Features in Laravel 11
+Here are the most notable updates:
+- Slim Skeleton: Laravel 11 removes several default folders like app/Console, app/Exceptions, and app/Http/Middleware. Routes, middleware, and exception handling are now registered in bootstrap/app.php.
+- Minimal Service Providers: Only AppServiceProvider.php is included by default. You can add others manually if needed.
+- Simplified Routing: Routes are now defined directly in bootstrap/app.php, reducing boilerplate for small apps.
+- No Middleware Folder: Middleware is registered inline or via closures, streamlining the setup.
+- Improved Performance: Laravel 11 includes internal optimizations for faster boot times and reduced memory usage.
+- Updated Versioning Policy: Laravel continues its yearly major release cycle, with Laravel 11 released on March 12, 2024.
+
+🛠️ Common Artisan Commands in Laravel 11
+Artisan remains the CLI powerhouse of Laravel. Here’s a categorized list of frequently used commands:
+📦 Project Setup & Maintenance
+- php artisan serve — Start local development server
+- php artisan config:cache — Cache configuration files
+- php artisan route:list — View all registered routes
+- php artisan optimize — Optimize performance
+🧱 Code Generation
+- php artisan make:model Post — Create a model
+- php artisan make:controller PostController — Create a controller
+- php artisan make:migration create_posts_table — Create a migration
+- php artisan make:seeder PostSeeder — Create a seeder
+- php artisan make:middleware CheckUserRole — Create middleware
+🧪 Testing & Debugging
+- php artisan test — Run PHPUnit tests
+- php artisan tinker — Interactive REPL for Laravel
+🔄 Database Management
+- php artisan migrate — Run migrations
+- php artisan db:seed — Seed the database
+- php artisan migrate:rollback — Roll back last migration batch
+- php artisan migrate:fresh — Drop all tables and re-run migrations
+🧩 Custom Commands
+- php artisan make:command CustomTask — Create your own CLI command
+- php artisan custom:task — Run your custom command (after registration)
+You can view all available commands with:
+php artisan list
+
+
+Or get help for a specific command:
+php artisan help make:model
