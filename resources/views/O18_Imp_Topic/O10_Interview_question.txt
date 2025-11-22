@@ -1,0 +1,169 @@
+Question 1 : What is the default database system used in Laravel?
+Answer : SQLite
+
+Question 2 : Which command is used to create a Laravel Project?
+Answer : - laravel new <projectname>  : If you download composer and laravel globally then use this
+         - composer create-project --prefer-dist laravel/laravel projectname : If you didn't download laravel then use this command
+
+Question 3 : Which method is used to redirect users in Laravel?
+Answer : redirect()->route()
+
+Question 4 : Which command is used to generate a new controller in laravel?
+Answer : php artisan make:controller <controller_name>
+
+Question 5 : Which command is used to roll back the last database migration?
+Answer : php artisan migrate:rollback
+        ex : php artisan migrate:rollback --step=2
+
+Question 6 : Which method is used to define API routes in laravel?
+Answer : Route::apiResource()
+    This single line will generate API routes for CRUD operation (index, store, show, update, and destroy) on the post route
+
+Question 7 : Which method is used in Eloquent to fetch the first record matching the query?
+Answer : first()
+    ex : $user User::where('email','example@example.com')->first();
+
+Question 8 : Which HTTP status code is returned when laravel route is not found?
+Answer : 404
+
+Question 9 : Which directory in a laravel application contains middleware?
+Answer : app/Http/Middleware
+
+Question 10 :  What is the role of middleware in laravel?
+Answer : A mechanism for filtering HTTP requests
+
+Question 11 : How to make middleware in laravel?
+Answer : php artisan make:middleware <Middleware_name>
+
+Question 12 : Which function is used to send emails in laravel?
+Answer : Mail
+
+Question 13 : What is the purpose of the php artisan optimize command?
+Answer : The php artisan optimize command in laravel is used to improve application performance by caching commonly used Components.
+This command:  Compiles commonly used classes into a single file, reducing
+Caches configuration files to avoid repeatedly loading and parsing them.
+Caches routes to speed up route resolution.
+
+Question 14 : which method is used to retrieve the old input value in Laravel forms?
+Answer : old()
+
+Question 15 : which method is used tp soft delete a record in Laravel ?
+Answer : $model->delete()
+
+Question 16 : What is the purpose of the php artisan route:cache command in laravel?
+Answer : Caches and optimizes routes for faster performance
+        generate route URLs dynamically
+
+Question 17 : What is the purpose of the php artisan route:clear command in laravel ?
+Answer : Clear the compiled route cache
+
+Question 18 : Which API method is used for save operation in laravel ?
+Answer : post
+
+Question 19 : What is Laravel ?
+Answer : A php framework where we can make API with php
+        A Php framework for web develpoment
+        Full stack framework
+
+Question 20 : What is the default templating engine in laravel?
+Answer : Blade
+
+Question 21 : Can we use Twig templating engine in Laravel?
+Answer : Yes, the default template engine used in symfony. Twig is fast, secure, and flexible. It has a sandbox mode to evalutate
+
+Question 22 : Which file contains database connection setting in laravel?
+Answer : .env
+
+Question 23 : Which command is used to start the laravel server?
+Answer : php artisan serve
+
+Question 24 : What is the default route file in laravel ?
+Answer : web.php
+
+Question 25 : WHat method is used to define a GET route in laravel ?
+Answer : Route::get()
+
+Question 26 : Which middleware is used for user for user authentication in laravel?
+Answer : A auth is default authentication routes
+
+Question 27 : Which file registers middleware in laravel ?
+Answer : app/http/Kernel.php
+
+Question 28 : What method is used to return a view in a controller ?
+Answer : return view(view_name')
+
+Question 29: Waht is Blade template in laravel?
+Answer : Blade is laravel built-in templating engine
+
+Question 30 : Which method is used to validate a request in laravel?
+Answer :1-  $request->validate()
+        2- Validator::make()
+
+Question 31 : Print a variable in Blade template in laravel?
+Answer : {{ $variable }}
+
+Question 32 : What command create a new model in laravel?
+Answer : php artisan make:model Model_Name
+
+Question 33 : How do you retrieve all records form a model ?
+Answer : Model::all()
+
+Question 34 : Which method finda a record by a primary key in Eloquent?
+Answer : find()
+
+Question 35 : What laravel feature prevents SQL injection?
+Answer : SQL injection is a code technique that might destroy or make unwanted changes your database
+
+Question 36 : How do you generate a new application key in laravel?
+Answer : php artisan key:generate
+        - primary used for encrypting and decrypting sesnstive data within your application
+
+Question 37 : What command is used to create a job in laravel?
+Answer : php artisan make:job Job_name
+        - Jobs are used to handle tasks that should be executed in the background
+
+Question 38 : Which database driver is used for laravel queue?
+Answer : MySQl , Redis, Beanstalked
+
+Question 39 : How do you extend a layout in Blade?
+Answer : @extends('layout')
+
+Question 40 : How do you include another Blade view inside a template?
+Answer : @include('view_name')
+
+Question 41 : What syntax is used to for loop blade template leravel?
+Answer : @foreach ($items as $item)
+
+Question 42 : How do you create a Blade Components?
+Answer :php artisan make:component Component_name
+
+Question 43 : What directive is used to check if a section exists?
+Answer : @hasSection('sectionname')
+
+Question 44 : What laravel package is used for file storage ?
+Answer : Filesystem
+
+Question 45 :  How do you store a file using laravel storage facade?
+Answer : Storage::put('path/file.txt', 'content')
+
+Question 46 : How do you return a JSON response in laravel ?
+Answer : return response()->json($data);
+
+Question 47 : Which middleware is used for API authentication in laravel ?
+Answer :sanctum
+
+Question 48 : How do define an API route in Laravel?
+Answer : Route::get('/api/data', 'controller@method');
+         Route::apiResource('resource', 'Controller');
+         Route::get('/data/, 'Controller@method')->middleware('api');
+
+Question 49 : What framework does laravel use for testing ?
+Answer : PhpUnit
+
+Question 50 : What command clears the application cache?
+Answer : php artisan cache:clear
+        - This command is used for clear all cache such as routes, view etc
+
+Question 51 : How do you create a custom helper function in laravel ?
+Answer : define it in helpers.php and include it in composer.json
+
