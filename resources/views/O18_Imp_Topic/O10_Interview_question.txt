@@ -167,3 +167,156 @@ Answer : php artisan cache:clear
 Question 51 : How do you create a custom helper function in laravel ?
 Answer : define it in helpers.php and include it in composer.json
 
+Question 52 : What is a named route in laravel?
+Answer : A named route in laravel is a way to assign a name to a specific route, masking it easier to generate URLs or red.
+
+Question 53 : which method is used to define a named route in laravel?
+Answer : Route::get()->name()
+
+Question 54 : What is the purpose of CSRF protection in laravel?
+Answer : Web attack that tricks a user into performing unwanted actions on a website.
+
+Question 55 : What command is used to list all registered routes?
+Answer : php artisan route:list
+
+Question 56 : Which middleware is used for verifying email in laravel authentication ?
+Answer : verify
+
+Question 57 : WHat is the default database engine in laravel ?
+Answer : None (Configurable)
+
+Question 58 : How do you specify a custom primary key in Eloquent?
+Answer : Define $primaryKey in the model
+
+Question 59 : What method updates a record in laravel Eloquent?
+Answer : update()
+
+Question 60 : What is the purpose of laravel's timestamps property in a model?
+Answer : Enable create_at and update_at colums
+
+Question 61 : Which method is used to delete a record in Eloquent ?
+Answer : delete()
+
+Question 62 : What is the purpose of laravel Horizon?
+Answer : Laravel Horizon is a tool within the laravel framework designed to monitor and manage background job queues.
+
+Question 63 : What is the purpose of dd() function in laravel?
+Answer : Debug and die
+
+Question 64 : What tool does laravel use for debugging?
+Answer : Laravel Debuger
+         Telescope
+         Xdebug
+
+Question 65 : What hashing algorithm does laravel use by default?
+Answer : Bcypt
+
+Question 66 : How do you hash a password in Laravel ?
+ Answer : Hash::make('password')
+
+Question 67 : How do you Enable API authentication in laravel?
+Answer : laravel Passport
+         Laravel sanctum
+         laravel JWT
+
+Question 68 : What is laravel Mix?
+Answer : A tool for manageing assets (css , js)
+
+Question 69 : How do you Enable laravel's mainteanace mode?
+Answer : php artisan down
+
+Question 70 : How do you exit mainteanace mode?
+Answer : php artisan up
+
+Question 71 : What command optimizec class loading in laravel ?
+Answer : php artisan optimize
+        - Analyze and modifies code to improve its performance
+
+Question 72 : What is laravel Livewire?
+Answer : A full-stack framework for building dynamic interfaces with PHP
+
+Question 73 : What is the difference between first() and find() in Eloquent?
+Answer : first() retrieve the first record matching a query, while find() retrieve a model by primary key.
+
+Question 74 : What is the difference between soft database and hard database ?
+Answer : soft deletes mark record as deleted without removing them, while hard deletes permanently delete records
+
+Question 75 : What is Laravel's Broadcasting feature used for?
+Answer : Real-time event Broadcasting using WebSockets.
+
+Question 76 : What is the difference between groupBy() and chunk() in Eloquent ?
+Answer groupBy() group records based on a column, while chunk() retrieve records in smaller portions
+
+Question 77 : What is mutator in laravel?
+Answer : A mutator in laravel is a method used to modify an attribute before saving it to the database.
+
+Question 78 : How do you encrypt and decrypt data in laravel?
+Answer : Using Crypt::encrypt() and Crypt::decrypt()
+
+Question 79 : What is the default session driver in laravel?
+Answer : file
+
+Question 80 : Which method is used to retrieve a configuration value in laravel?
+Answer : config()
+
+Question 81 : Which command is used to run database migration in laravel?
+Answer : php artisan migrate
+
+Question 82 : Which method is used to define a route that responds to multiple HTTP verbs in laravel?
+Answer : Route::match()
+
+Question 83 : In laravel, what does the nullable validation rule indicate ?
+Answer : The field is optional and can be null
+
+Question 84 : What is the purpose of the php artisan config:cache command in laravel?
+Answer : Cache the configuration files for faster performance.
+
+Question 85 : Which file in laravel  contains the application's main configuration setting?
+Answer :  config/app.php
+
+Question 86 : Which of the following statements correctly describes the use of the any route method in laravel?
+Answer : The any method is used to define a route that responds to all HTTP request methods.
+
+Question 87 : How can you pass data to a view from a controller in laravel?
+Answer : Use the compact() function to pass an array of data to the view.
+         use the with() method to attach variable to the view.
+         use the view() helper function and pass data as an associative array.
+
+Question 88 : What is an accessor in laravel?
+Answer : An accessor in laravel is a method used to transform an Eloquent attribute when retrieving it from the database.
+
+Question 89 : Which primary design pattern does laravel follow?
+Answer : Model-View_controller (MVC)
+
+Question 90 : Does laravel follow the object-oriented approach?
+Answer : Yes
+
+Question 91 : All dependencies are specified in the ___file, which is located in the source folder?
+Answer : composer.json
+
+Question 92 : What is the primary purpose of using views in laravel ?
+Answer : To seprate the presentation layer from business logic
+
+Question 93 : Rest API method name ?
+Answer : PUT, POST, DELETE , GET
+
+Question 94 : What is database seeding in laravel ?
+Answer : The process of populating the database with sample data
+
+Question 95 : Can you use raw PHP tags() inside a laravel Blade template?
+Answer : Yes, but it is discouraged
+
+Question 96 : What is the purpose of a controller in laravel ?
+Answer : To handle Http requests and responses
+
+Question 97 : What is the primary purpose of session in laravel ?
+Answer : Storing temporary data across multiple requests
+
+Question 98 : What is the purpose of a flash session in laravel?
+Answer : To store data temporary for the next request only
+
+Question 99 : How many main types of middleware exist in laravel?
+Answer : 2
+
+Question 100 : Which middleware is applied to all HTTP requests in laravel ?
+Answer : Global middleware
